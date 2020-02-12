@@ -23,7 +23,7 @@ body {
 
 .main-wrapper {
   position: relative;
-  height: auto;
+  min-height: 100%;
   overflow: hidden !important;
 }
 
@@ -167,6 +167,16 @@ a {
   &:hover {
     background-color: $primary-color-dark;
   }
+}
+
+.mx-1{
+  margin: 0 1rem;
+}
+.mx-2{
+  margin: 0 2rem;
+}
+.mx-3{
+  margin: 0 3rem;
 }
 
 /************************************
@@ -423,11 +433,9 @@ footer {
 
 /* **********************************| SCREEN > 768px |******************************* */
 @media screen and (min-width: 768px) {
-  .card-about {
-    max-width: 1200px;
-    width: 70%;
-    margin: 0 auto;
-  }
+  /***************************** 
+          Global Styles 
+  ******************************/
   .btn-large {
     font-size: 1.7rem;
   }
@@ -436,9 +444,50 @@ footer {
     max-width: 1120px;
     margin: 0 auto;
   }
-  .swiper-slide {
-    .quote {
-      width: 95%;
+
+
+
+  /***************************** 
+          Card
+  ******************************/
+  .card:nth-child(odd){
+    .card-inner{
+      flex-direction: row-reverse;
+    }
+  }
+  .card:nth-child(even){
+    .card-inner{
+      flex-direction: row;
+    }
+  }
+  .card{
+    .card-inner{
+      display: flex;
+      flex-direction: row;
+      .card-content{
+        display:flex;
+        align-items:center;
+        margin-left: 1rem;
+      }
+    }
+  }
+  /* card in about us page */
+  .card-about {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 1200px;
+    width: 70%;
+    margin: auto;
+  }
+
+  .swiper-container{
+    width: 95%;
+    .swiper-slide {
+      .quote {
+        width: 100%;
+      }
     }
   }
 
@@ -454,9 +503,9 @@ footer {
       font-weight: 800;
     }
   }
-
-  /* gloabl */
-
+  /***************************** 
+          Owl Carousel 
+  ******************************/
   .owl-carousel {
     .item {
       .slide1 {
@@ -549,7 +598,7 @@ footer {
       .card-inner {
         display: flex;
         padding: 1rem;
-        flex-direction: row;
+        flex-direction: row !important;
         .card-header {
           width: 100%;
         }

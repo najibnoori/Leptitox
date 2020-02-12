@@ -20,9 +20,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'q&$3myu$5j3_!b74o!%-)cr^vviv=xo%k0jo5z$9^(1!sjem7!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+SECRET_KEY = 'q&$3myu$5j3_!b74o!%-)cr^vviv=xo%k0jo5z$9^(1!sjem7!'
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -96,7 +96,7 @@ DATABASES = {
         'NAME': 'leptitox_proj',
         'USER': 'postgres',
         'PASSWORD': 'johndoe',
-        'PORT': 5432,  # ! not in quotes
+        'PORT': 5432,
     }
 }
 
@@ -179,3 +179,5 @@ try:
     from .local_settings import *
 except ImportError:
     pass
+
+
